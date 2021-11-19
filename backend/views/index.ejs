@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hi</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Hi</h1>
+    <h1>Add Game to League</h1>
+    <form method="POST" action="/leagues/addGame/61951eb52cfd048c6f64d404">
+      <input type="text" name="homeTeamId" value="6194fd51ab95803129569c96">
+      <input type="text" name="awayTeamId" value="619510640f749bc22c1588d3">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>add team to league</h1>
+    <form method="POST" action="/leagues/addteam/61951eb52cfd048c6f64d404">
+      <input type="text" name="teamId" value="6194fd51ab95803129569c96">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Change User Passowrd</h1>
+    <form method="POST" action="/users/changepassword/61948a79a4ab2266ce15a6bb">
+      <input type="text" name="password" placeholder="password">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Create Team</h1>
+    <form method="POST" action="/teams/create">
+      <input type="text" name="name">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Create User</h1>
+    <form method="POST" action="/users/create">
+      <input type="text" name="email">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Create Ref</h1>
+    <form method="POST" action="/users/createRef">
+      <input type="text" name="email">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Add PLayer to Team</h1>
+    <form method="POST" action="/teams/6194fd51ab95803129569c96/addPlayer">
+      <input type="text" name="playerId">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Edit Team Name</h1>
+    <form method="POST" action="/teams/6194fd51ab95803129569c96">
+      <input type="text" name="name">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Edit Manager</h1>
+    <form method="POST" action="/teams/editManager/6194fd51ab95803129569c96">
+      <input type="text" name="managerId">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Create Game</h1>
+    <form method="POST" action="/games/create">
+      <input type="text" name="homeTeamId" value="6194fd51ab95803129569c96">
+      <input type="text" name="awayTeamId" value="619510640f749bc22c1588d3">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Edit Score Game</h1>
+    <form method="POST" action="/games/score/619515fdf8914801bb82edd0">
+      <input type="text" name="score" value="2-3">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Add ref to game</h1>
+    <form method="POST" action="/games/ref/619515fdf8914801bb82edd0">
+      <input type="text" name="refId" value="61951b6353eebe209ff303ab">
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Placeholder</h1>
+    <form method="POST" action="">
+      <input type="text" name="">
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
