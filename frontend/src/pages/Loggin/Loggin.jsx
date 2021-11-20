@@ -122,7 +122,7 @@ function Loggin(props) {
         <Button
             variant="contained"
             color="primary"
-            style={{ opacity: .5, width: "500px"}}
+            style={{ opacity: .5, width: "750px", display:"flex", justifyContent:"start"}}
           > <CircularProgress color="inherit" />   {successMessage}  </Button>
         </Grid>
         </>
