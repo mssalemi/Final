@@ -17,22 +17,13 @@ export function createTeam(name) {
   })
 }
 
-/* 
-
-export function newUser(newUser) {
-  const data = axios({
+export function addPlayerToTeam(playerId, teamId) {
+  console.log("Adding Player to Team")
+  console.log(`PLAYER ID = ${playerId}`)
+  console.log(`TEAM ID = ${teamId}`)
+  return axios({
     method: 'post',
-    url: `http://localhost:4000/teams/create`,
-    data: {
-      email: newUser.email,
-      firstName: newUser.firstName,
-      lastName: newUser.lastName,
-      type: newUser.type,
-      password: newUser.password,
-      img: "img",
-      theme:  newUser.theme
-    }
-  });
+    url: `http://localhost:4000/teams/${teamId}/addPlayer`,
+    data: { playerId }
+  })
 }
-
-*/
