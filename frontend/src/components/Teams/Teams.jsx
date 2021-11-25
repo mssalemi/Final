@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {getTeams} from '../../services/teams';
 
-function AllTeams() {
+function Teams() {
 
   const [teams, setTeams] = useState(null)
 
@@ -29,4 +29,4 @@ function AllTeams() {
   )
 }
 
-export default AllTeams
+export default Teams
