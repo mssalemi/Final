@@ -7,7 +7,7 @@ import LockIcon from '@material-ui/icons/Lock'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 
 import axios from 'axios';
-import getUserData from '../../services/getUserData';
+import {getUserData} from '../../services/users';
 
 
 function Loggin(props) {
@@ -63,18 +63,22 @@ function Loggin(props) {
   }
 
   function fakeAuthentication () {
-    setTimeout(() => {
-      setSuccessMessage("\tAuthenticating")
-      setTimeout(() => {
-        setSuccessMessage("\tReally Authenticating")
-        setTimeout(() => {
-          setSuccessMessage("\tLoggin Success")
-          const authenticatedUser = users.filter(user => user.email == email)
-          console.log(`Authenticated User is: ${authenticatedUser.email}`)
-          props.setUser(authenticatedUser);
-        }, 1500)
-      }, 1500)
-    }, 1500)
+    // setTimeout(() => {
+    //   setSuccessMessage("\tAuthenticating")
+    //   setTimeout(() => {
+    //     setSuccessMessage("\tReally Authenticating")
+    //     setTimeout(() => {
+    //       setSuccessMessage("\tLoggin Success")
+    //       const authenticatedUser = users.filter(user => user.email == email)
+    //       console.log(`Authenticated User is: ${authenticatedUser.email}`)
+    //       props.setUser(authenticatedUser);
+    //     }, 1500)
+    //   }, 1500)
+    // }, 1500)
+    const authenticatedUser = users.filter(user => user.email == email)
+    console.log(`Authenticated User is: ${authenticatedUser.email}`)
+    console.log(authenticatedUser)
+    props.setUser(authenticatedUser);
   }
 
   return (

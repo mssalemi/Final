@@ -24,8 +24,14 @@ const getOne = (req, res, next) => {
 const create = (req, res, next) => {
   const newUser = new User({
       email: req.body.email,
-      password: req.body.password
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      type: req.body.type,
+      theme: req.body.theme,
+      password: req.body.password,
+      img: req.body.img
   });
+  console.log(newUser);
   newUser.save( err => {
     if (err) {
         res.status(400).json(err)

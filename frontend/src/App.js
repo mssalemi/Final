@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 import Loggin from './pages/Loggin/Loggin';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Main from './pages/Main/Main'
 
 import {Button} from '@material-ui/core'; 
 
@@ -15,11 +16,11 @@ function App() {
   return (
     <div className="page-container">
       <Navbar />
-      <div className="App">
+      
         {
-          (user) ? <h1>Logged In</h1> : <Loggin user={user} setUser={setUser}/>
+          (user) ? <Main user={user[0]} /> : <div className="App"><Loggin user={user} setUser={setUser}/></div>
         }
-      </div>
+      
       <Footer />
     </div>
 

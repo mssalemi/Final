@@ -19,7 +19,6 @@ app.use(cors({
   origin: '*'
 }));
 
-
 require('./config/database');
 
 // view engine setup
