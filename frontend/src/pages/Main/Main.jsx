@@ -7,6 +7,8 @@ import CreateProfile from '../../components/CreateProfile/CreateProfile'
 import EditProfile from '../../components/EditProfile/EditProfile'
 import Profile from '../../components/Profile/Profile'
 import Settings from '../../components/Settings/Settings'
+import AllTeams from '../../components/AllTeams/AllTeams'
+import Team from '../../components/Team/Team';
 import './Main.css'
 
 // ROUTER CODE - react-router-dom v6 - way different than class - dont forget
@@ -20,7 +22,9 @@ function Main(props) {
       {/* <EditProfile user={props.user}/> */}
       {/* <ChangePassword user={props.user} /> */}
       <Routes>
-          <Route path="/users/:id" element={<Profile user={props.user} />}></Route>
+          <Route path="/teams" element={ <AllTeams />}></Route>
+          <Route exact path="/teams/:id" element={<Team />}></Route>
+          <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
       </Routes>
     </div>
   )
