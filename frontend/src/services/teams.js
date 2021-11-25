@@ -27,3 +27,11 @@ export function addPlayerToTeam(playerId, teamId) {
     data: { playerId }
   })
 }
+
+export function editTeam(teamId, name) {
+  return axios({
+    method: 'post',
+    url: `http://localhost:4000/teams/${teamId}`,
+    data: { name }
+  })
+}

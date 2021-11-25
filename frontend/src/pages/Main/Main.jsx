@@ -11,6 +11,7 @@ import Teams from '../../components/Teams/Teams'
 import Team from '../../components/Team/Team';
 import './Main.css'
 import CreateTeam from '../../components/CreateTeam/CreateTeam';
+import EditTeam from '../../components/EditTeam/EditTeam';
 
 // ROUTER CODE - react-router-dom v6 - way different than class - dont forget
 // Following this: https://enlear.academy/whats-new-in-react-router-6-e34e451e5285 
@@ -25,6 +26,7 @@ function Main(props) {
       <Routes>
           <Route exact path="/teams" element={ <Teams />}></Route>
           <Route exact path="/teams/:id" element={<Team />}></Route>
+          <Route exact path="/teams/:id/edit" element={<EditTeam />}></Route>
           <Route exact path="/teams/create" element={<CreateTeam />}></Route>
 
           <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
