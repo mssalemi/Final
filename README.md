@@ -1,7 +1,24 @@
 # sei-final-project-v2
 
+### Next Updates: 
+Team Components:
+- Team 
+- Create Team 
+- Add Player to Team 
+- Edit Team 
+
 
 ## Completed so Far
+
+# React Components
+
+### User
+- Profile
+- Create Profile
+- Edit Profile
+- Change Password on Profile
+
+# API 
 
 #### Models: 
 - User
