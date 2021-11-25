@@ -2,11 +2,11 @@
 
 ### Next Updates: 
 Team Components:
-- Team ⏳
-- Teams ⏳ 
-- Create Team 
-- Edit Team 
-- Add Player to Team 
+- Team -  ✅ 
+- Teams -  ✅ 
+- Create Team -  ✅ 
+- Edit Team ❌
+- Add Player to Team - 🚌  Done but needs improvements to strucutre
 
 
 ## Completed so Far
