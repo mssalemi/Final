@@ -12,6 +12,8 @@ import Team from '../../components/Team/Team';
 import './Main.css'
 import CreateTeam from '../../components/CreateTeam/CreateTeam';
 import EditTeam from '../../components/EditTeam/EditTeam';
+import Leagues from '../../components/Leagues/Leagues'
+import League from '../../components/League/League'
 
 // ROUTER CODE - react-router-dom v6 - way different than class - dont forget
 // Following this: https://enlear.academy/whats-new-in-react-router-6-e34e451e5285 
@@ -24,12 +26,19 @@ function Main(props) {
       {/* <EditProfile user={props.user}/> */}
       {/* <ChangePassword user={props.user} /> */}
       <Routes>
+          <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
+          <Route exact path="/users/edit" element={<EditProfile user={props.user}/>}></Route>
+
           <Route exact path="/teams" element={ <Teams />}></Route>
           <Route exact path="/teams/:id" element={<Team />}></Route>
           <Route exact path="/teams/:id/edit" element={<EditTeam />}></Route>
           <Route exact path="/teams/create" element={<CreateTeam />}></Route>
 
-          <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
+          <Route exact path="/leagues" element={ <Leagues user={props.user} /> }></Route>
+          <Route exact path="/leagues/:id" element={<League /> }></Route>
+          <Route exact path="/leagues/:id/edit" element={ <p>Edit</p> }></Route>
+          <Route exact path="/leagues/create" element={ <p>Create</p> }></Route>
+          <Route exact path="/leagues/addTeam" element={ <p>Add Team</p> }></Route>
       </Routes>
     </div>
   )

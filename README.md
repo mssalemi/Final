@@ -1,15 +1,25 @@
 # sei-final-project-v2
 
+
 ### Next Updates: 
+League Compoents
+- Leagues ✅ with links Needs Love 
+- League ✅ with link Needs Love 
+- Create League ❌
+- Add Team to League ❌
+- Add Game To League (Need Game First) ⚠️
+
+
+## Completed so Far
+
+#### Recents:
 Team Components:
 - Team -  ✅ 
 - Teams -  ✅ 
 - Create Team -  ✅ 
-- Edit Team ❌ TODO 
-- Add Player to Team - 🚌 - Done but needs improvements to strucutre
+- Edit Team ✅ 
+- Add Player to Team - ✅  but need a little more love
 
-
-## Completed so Far
 
 # React Components
 
