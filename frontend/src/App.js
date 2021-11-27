@@ -18,7 +18,7 @@ function App() {
       <Navbar />
       
         {
-          (user) ? <Main user={user[0]} /> : <div className="App"><Loggin user={user} setUser={setUser}/></div>
+          (user) ? <Main user={user[0]} /> : <Loggin user={user} setUser={setUser}/>
         }
       
       <Footer />
