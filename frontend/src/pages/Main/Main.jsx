@@ -16,6 +16,7 @@ import Leagues from '../../components/Leagues/Leagues'
 import League from '../../components/League/League'
 import CreateLeague from '../../components/League/CreateLeague'
 import LeagueAddTeam from '../../components/League/LeagueAddTeam'
+import CreateGame from '../../components/League/CreateGame';
 
 // ROUTER CODE - react-router-dom v6 - way different than class - dont forget
 // Following this: https://enlear.academy/whats-new-in-react-router-6-e34e451e5285 
@@ -39,8 +40,10 @@ function Main(props) {
           <Route exact path="/leagues" element={ <Leagues user={props.user} /> }></Route>
           <Route exact path="/leagues/:id" element={<League /> }></Route>
           <Route exact path="/leagues/:id/edit" element={ <p>Edit</p> }></Route>
+          <Route exact path="/leagues/:id/game" element={ <CreateGame /> }></Route>
           <Route exact path="/leagues/create" element={ <CreateLeague /> }></Route>
           <Route exact path="/leagues/addTeam" element={ <LeagueAddTeam /> }></Route>
+
       </Routes>
     </div>
   )
