@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import { getLeague, getLeagues } from '../../services/leagues'
 import { CircularProgress } from '@material-ui/core'
 import TeamList from './TeamList'
+import LeagueAddTeam from './LeagueAddTeam';
 
 function League() {
 
@@ -22,6 +23,9 @@ function League() {
           We got a league!
           <TeamList teams={league.teams}/>
         </> : <CircularProgress />
+      }
+      {
+        league && <LeagueAddTeam id={id}/>
       }
     </div>
   )

@@ -2,12 +2,14 @@
 
 
 ### Next Updates: 
+- need some sort of way to update state when i update the database
+
 League Compoents
 - Leagues ✅ with links Needs Love 
 - League ✅ with link Needs Love 
 - Create League ❌
-- Add Team to League ❌
-- Add Game To League (Need Game First) ⚠️
+- Add Team to League ✅ 
+- Add Game To League (Need Game First) 
 
 
 ## Completed so Far

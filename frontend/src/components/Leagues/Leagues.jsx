@@ -11,6 +11,7 @@ function Leagues(props) {
     // for some fake loading
     const {data} = await getLeagues();
     setLeagues(data);
+    console.log(data)
   }, [])
 
   return (
