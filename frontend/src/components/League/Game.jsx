@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { newGame } from '../../services/leagues'
 
 function Game(props) {
 
@@ -33,9 +34,11 @@ function Game(props) {
         </select>
       </div>
       <div>
-        <button onClick={() => {
+        <button onClick={async () => {
           console.log(homeTeam)
           console.log(awayTeam)
+          const {data} = await newGame(homeTeam, awayTeam, props.leagueId);
+          console.log(data)
         }}>Create Game</button>
       </div>
     </>

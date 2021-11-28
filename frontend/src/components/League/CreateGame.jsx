@@ -18,7 +18,7 @@ function CreateGame() {
     <div>
       <h1>Create Game</h1>
       {
-        teams ? <Game teams={teams} /> : <div>...loading</div>
+        teams ? <Game teams={teams} leagueId={id} /> : <div>...loading</div>
       }
     </div>
   )

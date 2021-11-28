@@ -24,3 +24,12 @@ export function addTeam(leagueId, teamId) {
     data: { teamId },
   });
 }
+
+export function newGame(homeTeamId, awayTeamId, leagueId) {
+  console.log('did we get here part 1');
+  return axios({
+    method: 'post',
+    url: `http://localhost:4000/leagues/${leagueId}/game`,
+    data: { homeTeamId, awayTeamId },
+  });
+}
