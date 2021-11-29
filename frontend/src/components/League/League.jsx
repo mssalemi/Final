@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import { getLeague, getLeagues } from '../../services/leagues'
 import { CircularProgress } from '@material-ui/core'
 import TeamList from './TeamList'
@@ -27,6 +27,9 @@ function League() {
       {
         league && <LeagueAddTeam id={id}/>
       }
+      <Link to={`/leagues/${id}/edit`}>
+        Edit
+      </Link>
     </div>
   )
 }

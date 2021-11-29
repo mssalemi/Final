@@ -2,19 +2,38 @@
 
 
 ### Next Updates: 
-- need some sort of way to update state when i update the database
+Game Component
+- Edit Game (Score)
+- Delete Game
+- View Games
 
-League Compoents
-- Leagues ✅ with links Needs Love 
-- League ✅ with link Needs Love 
-- Create League ❌
-- Add Team to League ✅ 
-- Add Game To League (Need Game First) 
+Team Component
+- Plaseholder images
+
+User Component
+- Placeholder imgs
+
+Other
+- need some sort of way to update state when i update the database
+- user id to local storeage
+
+Home Page
+- Your Teams
+- Your Leagues 
+-  Upcoming Games
 
 
 ## Completed so Far
 
 #### Recents:
+
+League Compoents
+- Leagues ✅ with links Needs Love 
+- League ✅ with link Needs Love 
+- Create League ✅
+- Add Team to League ✅ 
+- Add Game To League (Need Game First)  ✅
+
 Team Components:
 - Team -  ✅ 
 - Teams -  ✅ 

@@ -6,7 +6,7 @@ export function getLeagues() {
 }
 
 export function getLeague(id) {
-  return axios.get(`http://localhost:4000/league/${id}`);
+  return axios.get(`http://localhost:4000/leagues/${id}`);
 }
 
 export function createLeague(name) {
@@ -26,10 +26,14 @@ export function addTeam(leagueId, teamId) {
 }
 
 export function newGame(homeTeamId, awayTeamId, leagueId) {
-  console.log('did we get here part 1');
+  console.log('did we get here part 2');
   return axios({
     method: 'post',
     url: `http://localhost:4000/leagues/${leagueId}/game`,
     data: { homeTeamId, awayTeamId },
   });
+}
+
+export function editLeague(id, name) {
+  console.log('editting league');
 }

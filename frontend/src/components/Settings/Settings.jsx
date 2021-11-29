@@ -1,10 +1,11 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './Settings.css'
 
 function Settings() {
   return (
     <div className="nav-settings">
-      <div className="nav-settings--item">Edit Profile</div>
+       <Link to={`/`}><div className="nav-settings--item">Home</div></Link>
       <div className="nav-settings--item">Your Teams</div>
     </div>
   )
