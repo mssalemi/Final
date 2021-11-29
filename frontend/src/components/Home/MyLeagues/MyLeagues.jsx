@@ -9,12 +9,10 @@ function MyLeagues(props) {
 
   const [leagues, setLeagues] = useState(null);
 
-  useEffect(() => {
-    setTimeout(async() => {
-      const {data} = await getLeagues();
-      const userLeagues = data.filter( league => league.teams.filter(teams => teams.roster.includes(props.user._id)).length > 0)
-      setLeagues(userLeagues)
-    }, 1500)
+  useEffect(async () => {
+    const {data} = await getLeagues();
+    const userLeagues = data.filter( league => league.teams.filter(teams => teams.roster.includes(props.user._id)).length > 0)
+    setLeagues(userLeagues)
   })
 
   return (

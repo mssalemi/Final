@@ -6,7 +6,6 @@ function Settings() {
   return (
     <div className="nav-settings">
        <Link to={`/`}><div className="nav-settings--item">Home</div></Link>
-      <div className="nav-settings--item">Your Teams</div>
     </div>
   )
 }

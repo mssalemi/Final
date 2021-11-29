@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { breakpoints } from '@mui/system';
 import {Navigate} from 'react-router-dom'
 import MyLeagues from './MyLeagues/MyLeagues'
+import MyTeams from './MyTeams/MyTeams';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,14 +42,14 @@ function Home(props) {
 
   // Conditional Menu Dispaly
   const [leagues, setLeagues] = useState(false)
-  const [teams, setTeam] = useState(false)
+  const [teams, setTeams] = useState(false)
   const [user, setUser] = useState(false)
   const [changePassword, setChangePassword] = useState(false)
   const [logout, setLogout] = useState(false)
 
   const closeAll = () => {
     setLeagues(false)
-    setTeam(false)
+    setTeams(false)
     setUser(false)
     setChangePassword(false)
   }
@@ -63,12 +64,15 @@ function Home(props) {
         break;
       case 'Your Teams':
         console.log("Teams SELECTED")
+        setTeams(true)
         break;
       case 'User Info':
         console.log("info selected")
+        setUser(true)
         break;
       case 'Change Password':
         console.log("Passowrd SELECTED")
+        setChangePassword(true)
         break;
       case 'Logout':
         console.log("Logout SELECTED")
@@ -77,6 +81,10 @@ function Home(props) {
         console.log("Defualt Case")
     }
   };
+
+  const loggout = () => {
+    props.setUser(null)
+  }
 
   return (
     <div>
@@ -97,7 +105,7 @@ function Home(props) {
           <MenuItem onClick={handleClose}>Your Teams</MenuItem>
           <MenuItem onClick={handleClose}>User Info</MenuItem>
           <MenuItem onClick={handleClose}>Change Password</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem onClick={loggout}>Logout</MenuItem>
         </Menu>
       </div>
       <div>
@@ -105,6 +113,16 @@ function Home(props) {
         {
           leagues && <MyLeagues user={props.user} />
         }
+        {
+          teams && <MyTeams user={props.user}></MyTeams>
+        }
+        {
+          user && <Navigate to={`/users/${props.user._id}`}></Navigate>
+        }
+        {
+          changePassword && <Navigate to={ `/users/${props.user._id}/changePassword` } />
+        }
+
       </div>
     </div>
   )

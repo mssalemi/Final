@@ -31,7 +31,7 @@ function Main(props) {
       {/* <EditProfile user={props.user}/> */}
       <Routes>
           
-          <Route exact path="" element={ <Home user={props.user} /> }></Route>
+          <Route exact path="" element={ <Home user={props.user} setUser={props.setUser}/> }></Route>
 
           <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
           <Route exact path="/users/:id/changePassword" element={<ChangePassword user={props.user} />}></Route>

@@ -2,6 +2,7 @@
 
 
 ### Next Updates: 
+
 Game Component
 - Edit Game (Score)
 - Delete Game
@@ -10,17 +11,19 @@ Game Component
 Team Component
 - Plaseholder images
 
-User Component
-- Placeholder imgs
+Other Component
+- Placeholder imgs everywhere
 
 Other
 - need some sort of way to update state when i update the database
 - user id to local storeage
 
 Home Page
-- Your Teams
-- Your Leagues 
+- Your Teams ✅ 
+- Your Leagues  ✅ 
 -  Upcoming Games
+- go to user page ✅ 
+- loggout ✅  need love, add confirm step ❌
 
 
 ## Completed so Far
