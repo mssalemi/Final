@@ -6,3 +6,11 @@
   background-color: #41418d; 
   opacity: 1;
 }
+
+.light {
+  background-color: #cfe3f7;
+}
+
+.dark {
+  background-color: #8dc6ff;
+}

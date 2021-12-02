@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import {Navigate} from 'react-router-dom';
 import './EditProfile.css'
 import { TextField, Button, MenuItem } from '@material-ui/core';
 
@@ -13,6 +13,8 @@ function EditProfile(props) {
   const [firstName, setFirstName] = useState(props.user.firstName)
   const [lastName, setLastName] = useState(props.user.lastName)
   const [theme, setTheme] = useState(props.user.theme ? props.user.theme : "Dark")
+
+  const [redirect, setRedirect] = useState(false)
 
   console.log(props.user.theme)
 
@@ -31,9 +33,10 @@ function EditProfile(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updateUser(props.user, e.target.firstName.value, e.target.lastName.value, e.target.theme.value);
+    setRedirect(true)
   }
 
-  return (
+  return redirect ? <Navigate to={`/users/${props.user._id}`} /> : (
     <div>
       {/* Needs Editing */}
       {/* <form method="POST" action="http://localhost:4000/users/6194fdd0ab95803129569c9c"> */}
@@ -44,7 +47,6 @@ function EditProfile(props) {
         <TextField onChange={handleThemeChange} id="select" label="Theme" value={theme} name="theme" select>
           <MenuItem value="Dark">Dark</MenuItem>
           <MenuItem value="Light">Light</MenuItem>
-          <MenuItem value="GOTEMMM">Gottem</MenuItem>
         </TextField>
         <Button type="submit" variant="contained" color="primary">Save</Button>
       </form>

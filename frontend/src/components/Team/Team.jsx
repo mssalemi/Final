@@ -29,6 +29,7 @@ function Team() {
     console.log("add players to team")
     const {data} = await getUserData();
     setPlayersSelector(data)
+    console.log(data)
   }
 
   const handlePlayerSearchChange = (e) => {
@@ -67,7 +68,6 @@ function Team() {
       team ? (
         <div>
           <h1>{team.name}</h1>
-          <h3>Roster</h3>
           <Roster roster={team.roster}/>
         </div>
       ) : <div>....loading</div>
@@ -79,11 +79,14 @@ function Team() {
           <div>
             <input value={playerSearch} onChange={handlePlayerSearchChange} type="text"></input>
             <button onClick={handleSearchPlayers}>Search</button>
+            {
+              playerSearchDisplay.length > 0 && <button onClick={()=>setPlayerSearchDisplay([])}>Clear</button> 
+            }
           </div>
           {
             playerSearchDisplay.length > 0 ? (
               <div>
-                Player's: 
+                Player's Found ({playerSearchDisplay.length} total): 
                 {
                   playerSearchDisplay.map( player => {
                     return (

@@ -39,7 +39,7 @@ function Loggin(props) {
     }  
   }, [email])
 
-  useEffect(() => {
+  useEffect( () => {
     console.log(users)
     const user = users.filter( user => {
       return user.password === password && user.email === email
@@ -62,7 +62,7 @@ function Loggin(props) {
     setPassword(e.target.value)
   }
 
-  function fakeAuthentication () {
+  const fakeAuthentication = () => {
     // setTimeout(() => {
     //   setSuccessMessage("\tAuthenticating")
     //   setTimeout(() => {
@@ -76,9 +76,10 @@ function Loggin(props) {
     //   }, 1500)
     // }, 1500)
     const authenticatedUser = users.filter(user => user.email == email)
-    console.log(`Authenticated User is: ${authenticatedUser.email}`)
+    console.log(users)
     console.log(authenticatedUser)
-    props.setUser(authenticatedUser);
+    console.log(`Authenticated User is: ${authenticatedUser[0].email}`)
+    props.setUser(authenticatedUser[0]);
   }
 
   return (

@@ -9,6 +9,7 @@ import { breakpoints } from '@mui/system';
 import {Navigate} from 'react-router-dom'
 import MyLeagues from './MyLeagues/MyLeagues'
 import MyTeams from './MyTeams/MyTeams';
+import './Home.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
 
 function Home(props) {
   const [yourLeagues, setYourLeagues] = useState('')
+  console.log("user isssssss")
+  console.log(props.user)
+
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -70,10 +74,6 @@ function Home(props) {
         console.log("info selected")
         setUser(true)
         break;
-      case 'Change Password':
-        console.log("Passowrd SELECTED")
-        setChangePassword(true)
-        break;
       case 'Logout':
         console.log("Logout SELECTED")
         break;
@@ -87,27 +87,28 @@ function Home(props) {
   }
 
   return (
-    <div>
-      <Avatar className={classes.purple}> { props.user.firstName[0] + props.user.lastName[0] } </Avatar>
-      Welcome, {props.user.firstName}!
-      <div>
-        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+  <>
+    <div className="home-container">
+
+      <div class="card">
+        <div class="card-body">
+          <Avatar className={classes.purple}> { props.user.firstName[0] + props.user.lastName[0] } </Avatar>
+          <div>Welcome, {props.user.firstName}!</div>
+        </div>
+      </div>
+      
+      <div className="user-controls">
+        <Button variant="contained" color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           Open Menu
         </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
+        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} >
           <MenuItem onClick={handleClose}>Your Leagues</MenuItem>
           <MenuItem onClick={handleClose}>Your Teams</MenuItem>
-          <MenuItem onClick={handleClose}>User Info</MenuItem>
-          <MenuItem onClick={handleClose}>Change Password</MenuItem>
           <MenuItem onClick={loggout}>Logout</MenuItem>
         </Menu>
       </div>
+
+
       <div>
         {/* Conditional Stuff */}
         {
@@ -116,15 +117,9 @@ function Home(props) {
         {
           teams && <MyTeams user={props.user}></MyTeams>
         }
-        {
-          user && <Navigate to={`/users/${props.user._id}`}></Navigate>
-        }
-        {
-          changePassword && <Navigate to={ `/users/${props.user._id}/changePassword` } />
-        }
-
       </div>
     </div>
+    </>
   )
 }
 

@@ -37,3 +37,23 @@ export function newGame(homeTeamId, awayTeamId, leagueId) {
 export function editLeague(id, name) {
   console.log('editting league');
 }
+
+export function getGame(gameId) {
+  return axios.get(`http://localhost:4000/games/${gameId}`);
+}
+
+export function editGameScore(gameId, score) {
+  return axios({
+    method: 'post',
+    url: `http://localhost:4000/games/${gameId}`,
+    data: { score },
+  });
+}
+
+export function editGameDate(gameId, date) {
+  return axios({
+    method: 'post',
+    url: `http://localhost:4000/games/date/${gameId}`,
+    data: { date },
+  });
+}

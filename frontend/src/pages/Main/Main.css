@@ -6,3 +6,7 @@
   height: 50px;
   border: 2px solid black;
 }
+
+.content {
+  padding: 50px;
+}

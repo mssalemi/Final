@@ -5,7 +5,7 @@ function Roster(props) {
     props.roster.length > 0 ? (
       <div>
       <table class="table">
-        <thead>
+        <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">First</th>

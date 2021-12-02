@@ -4,17 +4,23 @@ import { getLeague, getLeagues } from '../../services/leagues'
 import { CircularProgress } from '@material-ui/core'
 import TeamList from './TeamList'
 import LeagueAddTeam from './LeagueAddTeam';
+import ViewGames from './ViewGames';
 
 function League() {
 
   const { id } = useParams();
   const [league, setLeague] = useState(null);
 
-  useEffect(async () => {
-    const {data} = await getLeagues()
-    await setLeague(data.filter(league => league._id == id)[0])
-    console.log(league);
+  useEffect(() => {
+    refreshLeague()
   }, [])
+
+  const refreshLeague = async () => {
+    console.log("refrsh league")
+    const {data} = await getLeagues();
+    setLeague(data.filter(league => league._id == id)[0])
+    console.log(league);
+  }
 
   return (
     <div>
@@ -25,7 +31,10 @@ function League() {
         </> : <CircularProgress />
       }
       {
-        league && <LeagueAddTeam id={id}/>
+        league && <LeagueAddTeam refreshLeague={refreshLeague} league={league} id={id}/>
+      }
+      {
+        league && <ViewGames league={league}/>
       }
       <Link to={`/leagues/${id}/edit`}>
         Edit

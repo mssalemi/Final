@@ -19,37 +19,49 @@ import LeagueAddTeam from '../../components/League/LeagueAddTeam'
 import CreateGame from '../../components/League/CreateGame';
 import EditLeague from '../../components/League/EditLeague';
 import Home from '../../components/Home/Home'
+import EditGame from '../../components/League/EditGame';
 
 // ROUTER CODE - react-router-dom v6 - way different than class - dont forget
 // Following this: https://enlear.academy/whats-new-in-react-router-6-e34e451e5285 
 
 function Main(props) {
 
+  useEffect(() => {
+    props.authenticate();
+    console.log(props.user);
+    console.log("we are here")
+  }, [])
+
+
   return (
     <div className="main-container">
-      <Settings />
+      <Settings user={props.user}/>
       {/* <EditProfile user={props.user}/> */}
-      <Routes>
-          
-          <Route exact path="" element={ <Home user={props.user} setUser={props.setUser}/> }></Route>
+      <div className="content">
+        <Routes>
+            
+            <Route exact path="" element={ <Home user={props.user} setUser={props.setUser}/> }></Route>
 
-          <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
-          <Route exact path="/users/:id/changePassword" element={<ChangePassword user={props.user} />}></Route>
-          <Route exact path="/users/edit" element={<EditProfile user={props.user}/>}></Route>
+            <Route exact path="/users/:id" element={<Profile user={props.user} />}></Route>
+            <Route exact path="/users/:id/changePassword" element={<ChangePassword user={props.user} />}></Route>
+            <Route exact path="/users/edit" element={<EditProfile user={props.user}/>}></Route>
 
-          <Route exact path="/teams" element={ <Teams />}></Route>
-          <Route exact path="/teams/:id" element={<Team />}></Route>
-          <Route exact path="/teams/:id/edit" element={<EditTeam />}></Route>
-          <Route exact path="/teams/create" element={<CreateTeam />}></Route>
+            <Route exact path="/teams" element={ <Teams />}></Route>
+            <Route exact path="/teams/:id" element={<Team />}></Route>
+            <Route exact path="/teams/:id/edit" element={<EditTeam />}></Route>
+            <Route exact path="/teams/create" element={<CreateTeam />}></Route>
 
-          <Route exact path="/leagues" element={ <Leagues user={props.user} /> }></Route>
-          <Route exact path="/leagues/:id" element={<League /> }></Route>
-          <Route exact path="/leagues/:id/edit" element={ <EditLeague /> }></Route>
-          <Route exact path="/leagues/:id/game" element={ <CreateGame /> }></Route>
-          <Route exact path="/leagues/create" element={ <CreateLeague /> }></Route>
-          <Route exact path="/leagues/addTeam" element={ <LeagueAddTeam /> }></Route>
+            <Route exact path="/leagues" element={ <Leagues user={props.user} /> }></Route>
+            <Route exact path="/leagues/:id" element={<League /> }></Route>
+            <Route exact path="/leagues/:id/edit" element={ <EditLeague /> }></Route>
+            <Route exact path="/leagues/:id/game" element={ <CreateGame /> }></Route>
+            <Route exact path="/leagues/create" element={ <CreateLeague /> }></Route>
+            <Route exact path="/leagues/addTeam" element={ <LeagueAddTeam /> }></Route>
 
-      </Routes>
+            <Route exact path="/games/:id" element={ <EditGame /> }></Route>
+
+        </Routes>
+      </div>
     </div>
   )
 }

@@ -2,10 +2,9 @@ import React from 'react'
 
 import './Footer.css'
 
-function Footer() {
+function Footer(props) {
   return (
-    <div className="footer">
-      Footer
+    <div className={`footer ${ props.user ? props.user.theme == "Dark" ? "dark" :"light" : "light"}`} >
     </div>
   )
 }

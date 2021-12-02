@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import '../MyLeagues/MyLeagues.css'
 import {getLeagues} from '../../../services/leagues'
+import soccerimg from './soccerfield.jpeg'
 
 const placeholder_img_src = 'https://images.unsplash.com/photo-1605135693932-f1d6fb1be3cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1444&q=80'
 
@@ -17,7 +18,13 @@ function MyLeagues(props) {
 
   return (
     <>
-      {props.user.firstName} {props.user.lastName}'s Leagues:
+      <div class="hero-image">
+        <img src={soccerimg}></img>
+        <div class="hero-text">
+          <h1>{props.user.firstName}</h1>
+          <p>View your leagues here</p>
+        </div>
+      </div>
 
       {
         leagues ? <>
@@ -26,11 +33,9 @@ function MyLeagues(props) {
             leagues.length > 0 ? leagues.map( league => {
               return (
                 <div class="card">
-                  <img class="card-img-top" src={placeholder_img_src}></img>
-                  <div class="card-body">
-                    <h5 class="card-title">{league.name}</h5>
-                    <p class="card-text"></p>
-                    <Link to={`/leagues/${league._id}`}><div class="btn btn-primary">View</div></Link>
+                  <div className="card-body">
+                    <div ><Link to={`/leagues/${league._id}`}><div class="btn btn-primary">View</div></Link></div>
+                    <div><h5 class="card-title">{league.name}</h5></div>
                   </div>
                 </div>
               )

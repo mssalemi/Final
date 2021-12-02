@@ -13,7 +13,7 @@ function LeagueAddTeam(props) {
   return (
     <div>
       <h1>Add Team To League</h1>
-      <TeamSearch addTeamToLeague={addTeamToLeague} />
+      <TeamSearch league={props.league}refreshLeague={props.refreshLeague} addTeamToLeague={addTeamToLeague} />
       
     </div>
   )

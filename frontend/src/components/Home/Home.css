@@ -1,0 +1,10 @@
+.home-container {
+  padding: 25px
+}
+
+.card-body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 25px;
+}
