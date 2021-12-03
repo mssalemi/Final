@@ -84,6 +84,7 @@ function Home(props) {
 
   const loggout = () => {
     props.setUser(null)
+    localStorage.removeItem('user');
   }
 
   return (

@@ -3,7 +3,7 @@
   width:100%; 
   opacity: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
 } 
 
@@ -16,7 +16,6 @@
 }
 
 .navbar-icon {
-  padding-left: 10px;
   color: black;
 }
 
@@ -32,17 +31,22 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.navbar-search-container {
+  margin-left: auto;
+}
+
 .navbar-search {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display:flex;
+  align-items: center;
+  margin-right: 15px;
 }
 
 .navbar-search-display {
   position: absolute;
   top: 60px;
-  right: 60px;
+  right: 0px;
   background-color: white;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;

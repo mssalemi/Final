@@ -1,13 +1,13 @@
-import React from 'react'
-import axios, { Axios } from 'axios'
+import React from 'react';
+import axios, { Axios } from 'axios';
 
 export function getUserData() {
-  return axios.get("http://localhost:4000/users")
+  return axios.get('http://localhost:4000/users');
 }
 
 export function getOneUser(id) {
   console.log(`http://localhost:4000/users/${id}`);
-    return axios.get(`http://localhost:4000/users/${id}`)
+  return axios.get(`http://localhost:4000/users/${id}`);
 }
 
 export function updateUser(user, firstName, lastName, theme) {
@@ -17,10 +17,10 @@ export function updateUser(user, firstName, lastName, theme) {
     data: {
       firstName: firstName,
       lastName: lastName,
-      type: "player",
-      img: "img",
-      theme:  theme
-    }
+      type: 'player',
+      img: 'img',
+      theme: theme,
+    },
   });
 }
 
@@ -34,9 +34,9 @@ export function newUser(newUser) {
       lastName: newUser.lastName,
       type: newUser.type,
       password: newUser.password,
-      img: "img",
-      theme:  newUser.theme
-    }
+      img: 'img',
+      theme: newUser.theme,
+    },
   });
 }
 
@@ -44,6 +44,6 @@ export function changePassword(userId, newPassword) {
   return axios({
     method: 'post',
     url: `http://localhost:4000/users/changepassword/${userId}`,
-    data: { password: newPassword }
+    data: { password: newPassword },
   });
 }

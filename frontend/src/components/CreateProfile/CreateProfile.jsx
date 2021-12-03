@@ -48,7 +48,6 @@ function CreateProfile() {
     console.log(TYPE)
     console.log(THEME)
     await newUser(formData)
-
   }
 
   return (

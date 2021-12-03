@@ -59,7 +59,7 @@ function Team() {
     // (player, team)
     const {data} = await addPlayerToTeam(e.target.playerId.value, team._id);
     console.log(data)
-    updateTeam()
+    await updateTeam()
   }
 
   return (

@@ -36,7 +36,7 @@ function Main(props) {
   return (
     <div className="main-container">
       <Settings user={props.user}/>
-      {/* <EditProfile user={props.user}/> */}
+      
       <div className="content">
         <Routes>
             

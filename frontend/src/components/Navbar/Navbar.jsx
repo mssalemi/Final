@@ -39,10 +39,12 @@ function Navbar(props) {
   const [userModal, setUserModal] = useState(null)
 
   const handleSearchChange = async (e) => {
-    setUserSearch(e.target.value);
-    const {data} = await getUserData();
-    await setUserSearchResults(data.filter(user => user.firstName.toUpperCase().includes(userSearch.toUpperCase())))
-    console.log(data)
+    if (props.user)  {
+      setUserSearch(e.target.value);
+      const {data} = await getUserData();
+      await setUserSearchResults(data.filter(user => user.firstName.toUpperCase().includes(userSearch.toUpperCase())))
+      console.log(data)
+    }
   }
 
   return (
@@ -76,8 +78,11 @@ function Navbar(props) {
       <div className="navbar-title">
         One League 
       </div>
-      <div>
+      <div className="navbar-search-container">
         <div className="navbar-search">
+          {
+            props.user ? "" : props.showLoggin ? <button onClick={() => props.setShowLoggin(false)} type="button" class="btn btn-light">Sign Up</button> : <button onClick={() => props.setShowLoggin(true)} type="button" class="btn btn-light">Loggin</button>
+          }
           <TextField id="filled-basic" label="Search" variant="filled"  onChange={handleSearchChange} value={userSearch}/>
         </div>
         <div onClick={() => setUserSearchResults(null)} className="navbar-search-display">
