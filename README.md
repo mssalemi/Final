@@ -1,4 +1,8 @@
 # sei-final-project-v2
+
+*** Note from May 18th - 2022. 
+*** This project was from my bootcamp that I attended, and is no longer maintained. 
+
 ### Sports League Management App
 
 ![Screen Shot 2021-12-03 at 8 23 19 PM](https://user-images.githubusercontent.com/16329347/144691529-51de6288-735c-4d39-99e3-802793d38746.png)
